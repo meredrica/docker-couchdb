@@ -1,3 +1,17 @@
+CouchDB-novolume
+===
+This is a fork of the official CouchDB image at [klaemo/docker-couchdb](https://github.com/klaemo/docker-couchdb).
+It removes the VOLUME command from all dockerfiles so couchdb can be deployed with initial data.
+Persistent data should live in docker volumes but it is currently not possible to revert a `VOLUME` command at a later time. Therefore, a fork is required.
+
+The original volume path is `/usr/local/var/lib/couchdb`.
+
+It absolutely *should* be exposed as VOLUME in your own docker files as the last command in the file.
+
+An example for this will be provided later.
+
+The original documentation follows:
+
 YADC [![Build Status](https://travis-ci.org/klaemo/docker-couchdb.svg?branch=master)](https://travis-ci.org/klaemo/docker-couchdb)
 ===
 
